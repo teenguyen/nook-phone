@@ -1,10 +1,10 @@
-.appContainer #camera {
+.appContainer #camera-app {
   #camera-gradient-bg {
     display: none;
   }
 }
 
-.appContainer[data-active="true"] #camera {
+.appContainer[data-active="true"] #camera-app {
   overflow: visible;
 
   #camera-gradient-bg {
@@ -12,7 +12,7 @@
     animation: rotateBg 2s linear infinite;
   }
 
-  #camera-body {
+  #camera {
     animation: bounceCamera 0.265s ease-out infinite alternate;
   }
 
