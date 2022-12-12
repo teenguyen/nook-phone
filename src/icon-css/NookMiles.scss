@@ -1,0 +1,101 @@
+.appContainer #nook-miles-app {
+  #camera-gradient-bg {
+    display: none;
+  }
+}
+
+.appContainer[data-active="true"] #nook-miles-app {
+  overflow: visible;
+
+  #nook-world {
+    animation: rotateWorld 8s linear infinite;
+  }
+
+  #nook-nook {
+    animation: bounceNook 200ms linear alternate-reverse infinite;
+  }
+
+  #nook-tail {
+    animation: bounceTail 200ms linear alternate-reverse infinite;
+  }
+
+  // #nook-leg-left {
+  //   animation: moveLeftLeg 450ms linear infinite;
+  // }
+
+  // #nook-leg-right {
+  //   animation: moveRightLeg 450ms linear infinite;
+  // }
+}
+
+@keyframes rotateWorld {
+  from {
+    transform: scale(1.05) rotate(360deg);
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  to {
+    transform: scale(1.05) rotate(0);
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+}
+
+@keyframes bounceNook {
+  from {
+    transform: scale(1.22) translateY(0%);
+    transform-origin: center;
+  }
+  to {
+    transform: scale(1.22) translateY(10%);
+    transform-origin: center;
+  }
+}
+
+@keyframes bounceTail {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes moveLeftLeg {
+  0% {
+    transform: rotate(-119deg);
+    transform-box: fill-box;
+    transform-origin: 62% 41%;
+  }
+  // 18.18%,
+  // 27.26% {
+  //   transform: rotate(-28deg);
+  //   transform-box: fill-box;
+  //   transform-origin: 61% 42%;
+  // }
+  // 27.27%,
+  // 90.89% {
+  //   transform: rotate(-20deg);
+  //   transform-box: fill-box;
+  //   transform-origin: 61% 42%;
+  // }
+  // 90.90%,
+  100% {
+    transform: rotate(10deg);
+    transform-box: fill-box;
+    transform-origin: 108% 0%;
+  }
+}
+
+@keyframes moveRightLeg {
+  0%,
+  18.17% {
+    transform: rotate(109.5deg);
+    transform-box: fill-box;
+    transform-origin: 42.5% 42%;
+  }
+  18.18%,
+  100% {
+    transform: rotate(0);
+    transform-box: fill-box;
+    transform-origin: 42.5% 42%;
+  }
+}
