@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: url("/bg.jpg") no-repeat fixed center / cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+svg {
+  height: auto;
+  width: auto;
+}
+
+.appContainer {
+  display: flex;
+}
+
+.appContainer[data-active="true"] {
+  transform: scale(1.1);
+  transform-origin: center;
+}

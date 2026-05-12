@@ -2,36 +2,25 @@
   "name": "nook-phone",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "@testing-library/dom": ">=5",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "sass": "^1.56.2",
-    "typescript": ">=2.8.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev --webpack --hostname 0.0.0.0 --port 3000",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "next": "16.2.5",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.5",
+    "typescript": "^5"
   }
 }
