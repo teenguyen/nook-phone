@@ -2,17 +2,18 @@ services:
   app:
     build: .
     ports:
-      - "${APP_PORT:-3000}:3000"
+      - "${APP_PORT:-3000}:80"
     develop:
       watch:
         - action: sync
-          path: .
-          target: /app
-          ignore:
-            - node_modules/
-            - .next/
-            - .git/
-        - action: rebuild
-          path: package.json
-        - action: rebuild
-          path: pnpm-lock.yaml
+          path: ./index.html
+          target: /usr/share/nginx/html/index.html
+        - action: sync
+          path: ./css
+          target: /usr/share/nginx/html/css
+        - action: sync
+          path: ./js
+          target: /usr/share/nginx/html/js
+        - action: sync
+          path: ./assets
+          target: /usr/share/nginx/html/assets

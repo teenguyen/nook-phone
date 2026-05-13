@@ -1,26 +1,33 @@
 {
-  "name": "nook-phone",
+  "name": "@teenguyen/nook-phone",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "Static Nook Phone UI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teenguyen/nook-phone.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "files": [
+    "index.html",
+    "css",
+    "js",
+    "assets"
+  ],
   "scripts": {
-    "dev": "next dev --webpack --hostname 0.0.0.0 --port 3000",
-    "build": "next build --webpack",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "npx --yes serve@14.2.4 . -l 3000",
+    "start": "npx --yes serve@14.2.4 . -l 3000",
+    "pack:dry": "npm pack --dry-run",
+    "docker:build": "docker build -t nook-phone .",
+    "docker:up": "docker compose up --build",
+    "docker:watch": "docker compose watch",
+    "docker:down": "docker compose down",
+    "prepublishOnly": "npm run pack:dry"
   },
-  "dependencies": {
-    "next": "16.2.5",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
-  },
-  "devDependencies": {
-    "@svgr/webpack": "^8.1.0",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.5",
-    "typescript": "^5"
+  "engines": {
+    "node": ">=18"
   }
 }

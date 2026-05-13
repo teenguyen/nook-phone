@@ -1,14 +1,12 @@
-FROM node:20-alpine
+# Static site: root-level index.html, css/, js/, and assets/
+FROM nginx:alpine
 
-WORKDIR /app
+COPY index.html /usr/share/nginx/html/
+COPY css/ /usr/share/nginx/html/css/
+COPY js/ /usr/share/nginx/html/js/
+COPY assets/ /usr/share/nginx/html/assets/
 
-RUN corepack enable && corepack prepare pnpm@9 --activate
+EXPOSE 80
 
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
-
-COPY . .
-
-EXPOSE 3000
-
-CMD ["pnpm", "run", "dev"]
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD wget -qO- http://127.0.0.1/ >/dev/null || exit 1
