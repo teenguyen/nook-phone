@@ -1,4 +1,13 @@
-#details {
+.nookShell {
+  background: url("../assets/nook-phone.svg") no-repeat center / 100%;
+  height: 75vh;
+  width: calc(2 / 3 * 75vh);
+  display: grid;
+  grid-template-columns: 11.13% 77.74% 11.13%;
+  grid-template-rows: 5.28% 5.66% 3.52% 8.93% 3.4% 54.34% 7.55% 4.28% 7.04%;
+}
+
+.details {
   grid-area: 2 / 2 / 3 / 3;
   padding-left: 4%;
   padding-right: 9%;
@@ -7,20 +16,20 @@
   justify-content: space-between;
 }
 
-#wifi {
+.details #wifi {
   height: 60%;
 }
 
-#time {
+.details #time {
   color: #dfdac7;
   font-size: 3vh;
 }
 
-#location {
+.details #location {
   height: 80%;
 }
 
-#title {
+.title {
   grid-area: 4 / 2 / 5 / 3;
   color: #776755;
   font-size: 4.5vh;
@@ -28,7 +37,7 @@
   text-align: center;
 }
 
-#apps {
+.apps {
   grid-area: 6 / 2 / 7 / 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -37,20 +46,11 @@
   grid-row-gap: 6.94%;
 }
 
-.appContainer {
-  min-height: 0;
-  min-width: 0;
-  &[data-active="true"] {
-    transform: scale(1.1);
-    transform-origin: center;
-  }
-}
-
-#pages {
+.pages {
   grid-area: 8 / 2 / 9 / 3;
 }
 
-#screenshot {
+.screenshot {
   opacity: 50%;
   height: 75vh;
   visibility: hidden;

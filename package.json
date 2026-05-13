@@ -1,37 +1,33 @@
 {
-  "name": "nook-phone",
+  "name": "@teenguyen/nook-phone",
   "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "@testing-library/dom": ">=5",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "sass": "^1.56.2",
-    "typescript": ">=2.8.0"
+  "private": false,
+  "description": "Static Nook Phone UI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teenguyen/nook-phone.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "files": [
+    "index.html",
+    "css",
+    "js",
+    "assets"
+  ],
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "npx --yes serve@14.2.4 . -l 3000",
+    "start": "npx --yes serve@14.2.4 . -l 3000",
+    "pack:dry": "npm pack --dry-run",
+    "docker:build": "docker build -t nook-phone .",
+    "docker:up": "docker compose up --build",
+    "docker:watch": "docker compose watch",
+    "docker:down": "docker compose down",
+    "prepublishOnly": "npm run pack:dry"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "engines": {
+    "node": ">=18"
   }
 }

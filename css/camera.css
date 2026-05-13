@@ -1,24 +1,22 @@
-.appContainer #camera-app {
-  #camera-gradient-bg {
-    display: none;
-  }
+.appContainer #camera-app #camera-gradient-bg {
+  display: none;
 }
 
 .appContainer[data-active="true"] #camera-app {
   overflow: visible;
+}
 
-  #camera-gradient-bg {
-    display: block;
-    animation: rotateBg 2s linear infinite;
-  }
+.appContainer[data-active="true"] #camera-app #camera-gradient-bg {
+  display: block;
+  animation: rotateBg 2s linear infinite;
+}
 
-  #camera {
-    animation: bounceCamera 0.265s ease-out infinite alternate;
-  }
+.appContainer[data-active="true"] #camera-app #camera {
+  animation: bounceCamera 0.265s ease-out infinite alternate;
+}
 
-  #camera-button {
-    animation: clickButton 2s ease-out infinite;
-  }
+.appContainer[data-active="true"] #camera-app #camera-button {
+  animation: clickButton 2s ease-out infinite;
 }
 
 @keyframes rotateBg {
